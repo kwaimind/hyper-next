@@ -11,15 +11,15 @@ a {
   text-decoration: none;
 }
 
-a.back {
+* {
+  box-sizing: border-box;
+}
+
+a.link {
   color: #0070f3;
   text-decoration: none;
   width: 100%;
   margin-bottom: 10px;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .container {
@@ -87,13 +87,15 @@ a.back {
   justify-content: flex-start;
   flex-direction: column;
   width: 100%;
-  gap: 20px;
+}
+
+.grid a {
+  display: flex;
+  gap: 10px;
 }
 
 .card {
-  display: flex;
-  gap: 10px;
-  width: 100%;
+  margin: 1rem;
   padding: 1.5rem;
   text-align: left;
   color: inherit;
@@ -122,8 +124,8 @@ a.back {
 }
 
 .card img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 .logo {

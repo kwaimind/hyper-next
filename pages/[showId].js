@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Show({ show }) {
@@ -12,9 +11,9 @@ export default function Show({ show }) {
 
       <main className="main">
         <Link href="/">
-          <a className="back">← Back to home</a>
+          <a className="link">← Back to home</a>
         </Link>
-        <Image
+        <img
           src={`https://image.tmdb.org/t/p/original/${show.poster_path}`}
           alt={show.name}
           width={200}
@@ -27,31 +26,15 @@ export default function Show({ show }) {
   );
 }
 
-export async function getStaticPaths() {
-  const res = await fetch(
-    "https://api.themoviedb.org/3/tv/popular?api_key=3c81d3d434a13d39edaea832df6550a3&page=1"
-  );
-  const shows = await res.json();
-
-  const paths = shows.results.map((show) => ({
-    params: { showId: show.id.toString() },
-  }));
-
+/* export async function getStaticPaths() {
   return {
-    paths,
+    paths: [],
     fallback: false,
   };
-}
+} */
 
-export async function getStaticProps({ params }) {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/tv/${params.showId}?api_key=3c81d3d434a13d39edaea832df6550a3&language=en-US`
-  );
-  const show = await res.json();
-
+/* export async function getStaticProps({ params }) {
   return {
-    props: {
-      show,
-    },
+    props: {},
   };
-}
+} */
