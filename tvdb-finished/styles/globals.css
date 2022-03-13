@@ -11,6 +11,13 @@ a {
   text-decoration: none;
 }
 
+a.back {
+  color: #0070f3;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -80,15 +87,13 @@ a {
   justify-content: flex-start;
   flex-direction: column;
   width: 100%;
-}
-
-.grid a {
-  display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .card {
-  margin: 1rem;
+  display: flex;
+  gap: 10px;
+  width: 100%;
   padding: 1.5rem;
   text-align: left;
   color: inherit;
