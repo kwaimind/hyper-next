@@ -1,0 +1,22 @@
+{
+  "name": "hyper-next",
+  "version": "1.0.0",
+  "description": "This repo contains 2 folders",
+  "main": "index.js",
+  "scripts": {
+    "install": "for appName in tvdb tvdb-finished; do cd $appName && npm i && cd .. done",
+    "start": "cd tvdb && npm run dev",
+    "start:final": "cd tvdb-finished && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwaimind/hyper-next.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwaimind/hyper-next/issues"
+  },
+  "homepage": "https://github.com/kwaimind/hyper-next#readme"
+}
