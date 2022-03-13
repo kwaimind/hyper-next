@@ -2,9 +2,24 @@
 
 Starter app and file templates for the Hyper Island Next.js workshop.
 
-## Install
+## Tutorial
 
-To get started, run `npm i` in the `tvdb` directory. Then run `npm run dev` to start the Next.js app, and head to http://localhost:3000/ to see the app.
+In this tutorial, we will build a simple TV show database using The Movie Database API. It will be a simple app that has:
+
+- a homepage listing top TV shows right now
+- each show will have its own page
+- an about page to talk about our service
+
+To get started, run `npm i` then run `npm run dev` to start the Next.js app, and head to http://localhost:3000/ to see the app.
+
+In the sample app ([built using the `create-next-app` cli](https://nextjs.org/docs/getting-started#automatic-setup)), we have some directories:
+
+- `/pages` - where all of our pages are (and therefore our routes)
+- `/public` - some static assets we might need like logos and favicons
+- `/styles` - our global styles. I've just given some basic CSS here but you could use whatever CSS style you like (CSS, CSS Modules, Styled Components, Tailwind, etc)
+- `/templates` - some solutions to our workshop code-along if you get stuck. You can copy and paste these files to catch up
+
+There is also a backup data file `db.json` in case the API blocks our requests and thinks we are spamming them. You can import this data to any file with `import data from "../db.json";`
 
 ## Code snippets
 
