@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function Home({ shows }) {
+export default function Home({ shows, currentTime }) {
   return (
     <div className="container">
       <Head>
@@ -15,6 +15,8 @@ export default function Home({ shows }) {
         <p className="description">
           Get started by editing <code className="code">pages/index.js</code>
         </p>
+
+        {/* <p className="description">The time is {currentTime}</p> */}
 
         <div className="grid">
           {shows?.map((show) => (
@@ -37,10 +39,4 @@ export default function Home({ shows }) {
       </main>
     </div>
   );
-}
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  };
 }

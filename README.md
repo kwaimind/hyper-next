@@ -64,9 +64,38 @@ export async function getStaticProps() {
 }
 ```
 
+### 3.1 SSG vs. SSR - Getting dynamic data statically
+
+```js
+export async function getStaticProps() {
+  const currentTime = new Date().toISOString();
+
+  return {
+    props: {
+      currentTime,
+    },
+  };
+}
+```
+
+### 3.2 SSG vs. SSR - Getting dynamic data dynamically
+
+```js
+export async function getServerSideProps() {
+  const currentTime = new Date().toISOString();
+
+  return {
+    props: {
+      currentTime,
+    },
+  };
+}
+```
+
 ### 3.1 Fetching dynamic parameters with useRouter
 
 ```js
+import { useRouter } from "next/router";
 const router = useRouter();
 const { showId } = router.query;
 ```
