@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Show({ show }) {
   return (
@@ -13,7 +14,7 @@ export default function Show({ show }) {
         <Link href="/">
           <a className="link">← Back to home</a>
         </Link>
-        <img
+        <Image
           src={`https://image.tmdb.org/t/p/original/${show.poster_path}`}
           alt={show.name}
           width={200}

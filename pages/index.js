@@ -1,12 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
-import { useEffect, useState } from "react";
 
-export default function Home() {
-  const [shows, setShows] = useState([]);
-
-  useEffect(() => {}, []);
-
+export default function Home({ shows }) {
   return (
     <div className="container">
       <Head>
@@ -23,21 +17,21 @@ export default function Home() {
         </p>
 
         <div className="grid">
-          {shows.map((show) => (
-            <Link href={`/${show.id}`} key={show.name}>
-              <a className="card">
+          {shows?.map((show) => (
+            <a className="card" key={show.name}>
+              <div className="image">
                 <img
                   src={`https://image.tmdb.org/t/p/original/${show.poster_path}`}
                   alt={show.name}
                   width={100}
                   height={150}
                 />
-                <div>
-                  <h2>{show.name}</h2>
-                  <p>{show.overview.slice(0, 50)}...</p>
-                </div>
-              </a>
-            </Link>
+              </div>
+              <div className="content">
+                <h2>{show.name}</h2>
+                <p>{show.overview.slice(0, 50)}...</p>
+              </div>
+            </a>
           ))}
         </div>
       </main>
@@ -45,9 +39,8 @@ export default function Home() {
   );
 }
 
-/* export async function getStaticProps() {
+export async function getStaticProps() {
   return {
     props: {},
   };
 }
- */

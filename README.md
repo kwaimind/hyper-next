@@ -30,15 +30,15 @@ API Docs: https://developers.themoviedb.org/3/tv
 Data is fetched client side, after the app has downloaded, parsed & rendered for the 1st time, causing a white screen for the initial load.
 
 ```js
-const [data, setData] = useState([]);
+const [shows, setShows] = useState([]);
 
 useEffect(() => {
   const fetchData = async () => {
     const res = await fetch(
       "https://api.themoviedb.org/3/tv/popular?api_key=3c81d3d434a13d39edaea832df6550a3&page=1"
     );
-    const shows = await res.json();
-    setData(shows.results);
+    const showsRes = await res.json();
+    setShows(showsRes.results);
   };
 
   fetchData();
@@ -62,6 +62,13 @@ export async function getStaticProps() {
     },
   };
 }
+```
+
+### 3.1 Fetching dynamic parameters with useRouter
+
+```js
+const router = useRouter();
+const { showId } = router.query;
 ```
 
 ### 3. Fetching dynamic page data with useStaticProps
