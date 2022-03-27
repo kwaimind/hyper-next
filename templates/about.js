@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -10,6 +11,10 @@ export default function About() {
       </Head>
 
       <main className="main">
+        <Link href="/">
+          <a className="link">← Back to home</a>
+        </Link>
+
         <h1 className="title">About tvDB</h1>
 
         <p className="description">
