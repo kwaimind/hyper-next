@@ -66,6 +66,14 @@ Images on modern websites are hard. Luckily Next.js ships with a ready-made Imag
 
 You can read the [documentation](https://nextjs.org/docs/basic-features/image-optimization) to learn more about the component API.
 
+You will need to updaye your next.config to tell Next.js which domain your images are hosted on:
+
+```
+images: {
+  domains: ["image.tmdb.org"],
+},
+```
+
 ```js
 import Image from "next/image";
 
